@@ -1,0 +1,13 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<title>Иммитаторы для работы БСЦ</title>
+</head>
+<body>
+<center><h1>Перечень иммитаторов</h1></center>
+{% for t in context %}
+<li><a href="{{t.entrypoint}}">{{ t.title }}</a></li>
+{% endfor %}
+</body>
+</html>
