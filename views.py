@@ -4,6 +4,8 @@ from flask.views import View
 from catalogController import CatalogController
 from models import Catalog
 
+import const
+
 class CatalogView(View):
     def dispatch_request(self):
         t = Catalog.query.all()

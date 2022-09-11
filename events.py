@@ -1,5 +1,6 @@
 import aiohttp
 import asyncio
+from const import api_key
 
 id2315 = []
 id2542 = []
@@ -22,7 +23,7 @@ async def load():
     async with aiohttp.ClientSession(headers=header) as session:
         for number in datasets:
             dataUrl = f'https://apidata.mos.ru/v1/datasets/{number}/rows'
-            vars = {"api_key": "1fe9398e642fbd72d40957fae32dee75","$top":500,"$skip":0}
+            vars = {"api_key": api_key,"$top":500,"$skip":0}
             async with session.get(dataUrl, params=vars ) as resp:
                 print (resp.url)
                 if resp.status == 200:
